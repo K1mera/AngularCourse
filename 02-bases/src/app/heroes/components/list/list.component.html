@@ -1,0 +1,11 @@
+<h2>{{ title }}</h2>
+<p *ngIf="deletedHero">Deleted hero: <span>{{ deletedHero }}</span></p>
+<button (click)="deleteHero()" class="btn btn-danger">Delete last hero </button>
+
+
+<ul class="list-group list-group-flush mt-2">
+  <li *ngFor="let hero of heroes"
+  class="list-group-item">{{ hero }}</li>
+</ul>
+
+
