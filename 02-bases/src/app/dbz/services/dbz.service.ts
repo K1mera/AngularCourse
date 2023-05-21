@@ -1,7 +1,8 @@
 
 import { Injectable } from '@angular/core';
-import { Character } from '../interfaces/char.interface';
 import { v4 as uuid } from "uuid";
+
+import { Character } from '../interfaces/char.interface';
 
 @Injectable({providedIn: 'root'})
 
@@ -20,9 +21,13 @@ export class DbzService {
     }
   ];
 
-  onNewCharacter(character: Character): void {
-    const onNewCharacter = { ...character, id: uuid()}
-    this.characters.push(character);
+  addCharacter(character: Character): void {
+    const newCharacter: Character = { id: uuid(), ...character }
+    this.characters.push(newCharacter);
+  }
+
+  deleteCharacterById( id: string) {
+    this.characters = this.characters.filter(character => character.id !== id);
   }
 
 }

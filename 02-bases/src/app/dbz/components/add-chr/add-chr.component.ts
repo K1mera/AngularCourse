@@ -17,8 +17,8 @@ export class AddChrComponent {
     power: 0
   }
 
-  emitCharacter() {
-    if (this.character.name.trim().length === 0) return;
+  emitCharacter(): void {
+    if (this.character.name.length === 0) return;
     this.onNewCharacter.emit(this.character);
 
     this.character = { name: '', power: 0 };

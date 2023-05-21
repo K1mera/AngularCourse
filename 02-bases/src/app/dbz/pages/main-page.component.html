@@ -5,11 +5,15 @@
 <div class="row">
 
   <div class="col">
-    <dbz-app-list [characterList]="DbzService.characters" />
+    <dbz-app-list [characterList]="characters"
+              (onDelete)="onDeleteCharacter($event)">
+    </dbz-app-list>
 
   </div>
   <div class="col">
-    <app-add-chr (onNewCharacter)="DbzService.onNewCharacter($event)"/>
+    <app-add-chr (onNewCharacter)="onNewCharacter($event)">
+
+    </app-add-chr>
 
   </div>
 
