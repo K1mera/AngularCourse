@@ -1,4 +1,6 @@
 <input type="search"
 [placeholder]="placeHolder"
 class="form-control"
+(keyup)="emitValue( txtInput.value )"
+#txtInput
 >
